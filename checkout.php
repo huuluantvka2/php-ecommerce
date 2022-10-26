@@ -43,8 +43,8 @@ if(!isset($_SESSION['cart_p_id'])) {
                             <th><?php echo LANG_VALUE_47; ?></th>
                             <th><?php echo LANG_VALUE_157; ?></th>
                             <th><?php echo LANG_VALUE_158; ?></th>
-                            <th><?php echo LANG_VALUE_159; ?></th>
-                            <th><?php echo LANG_VALUE_55; ?></th>
+                            <!-- <th><?php echo LANG_VALUE_159; ?></th>
+                            <th><?php echo LANG_VALUE_55; ?></th> -->
                             <th class="text-right"><?php echo LANG_VALUE_82; ?></th>
                         </tr>
                          <?php
@@ -320,17 +320,17 @@ if(!isset($_SESSION['cart_p_id'])) {
 		                		
 	                            <div class="row">
 
-	                                <div class="col-md-12 form-group">
+                                <div class="col-md-12 form-group">
 	                                    <label for=""><?php echo LANG_VALUE_34; ?> *</label>
 	                                    <select name="payment_method" class="form-control select2" id="advFieldsStatus">
 	                                        <option value=""><?php echo LANG_VALUE_35; ?></option>
 	                                        <option value="PayPal"><?php echo LANG_VALUE_36; ?></option>
                                             <option value="momo"><?php echo LANG_VALUE_164; ?></option>
-                                            <option value="Zalopay"><?php echo LANG_VALUE_165; ?></option>
+                                            <option value="vnpay"><?php echo LANG_VALUE_165; ?></option>
                                             <option value="Bank Deposit"><?php echo LANG_VALUE_38; ?></option>
 	                                    </select>
 	                                </div>
-                       
+
                                     <form class="paypal" action="<?php echo BASE_URL; ?>payment/paypal/payment_process.php" method="post" id="paypal_form" target="_blank">
                                         <input type="hidden" name="cmd" value="_xclick" />
                                         <input type="hidden" name="no_note" value="1" />
@@ -340,7 +340,7 @@ if(!isset($_SESSION['cart_p_id'])) {
 
                                         <input type="hidden" name="final_total" value="<?php echo $final_total; ?>">
                                         <div class="col-md-12 form-group">
-                                            <input type="submit" class="btn btn-primary" value="<?php echo LANG_VALUE_46; ?>" name="form1">
+                                            <input type="submit" class="btn btn-primary" value="<?php echo LANG_VALUE_46; ?> <?php echo LANG_VALUE_36; ?>" name="form1">
                                         </div>
                                     </form>
 
@@ -348,15 +348,15 @@ if(!isset($_SESSION['cart_p_id'])) {
                                         <input type="hidden" name="final_total" value="<?php echo $final_total; ?>">
                                         <!--<input type="submit" class="btn btn-primary" value="Pay Now" name="form1"> -->
                                         <div class="col-md-12 form-group">
-                                            <input type="submit" class="btn btn-primary" value="<?php echo LANG_VALUE_46; ?>" name="form1">
+                                            <input type="submit" class="btn btn-primary" value="<?php echo LANG_VALUE_46; ?> <?php echo LANG_VALUE_164; ?>" name="form1">
                                         </div>
                                     </form>
 
-                                    <form class="" method="POST" target="_blank" enctype="application/x-www-form-urlencoded" action="<?php echo BASE_URL; ?>payment/zalopay/payment_process.php" id="zp_form">
+                                    <form class="" method="POST" target="_blank" enctype="application/x-www-form-urlencoded" action="vnpay_php/vnpay_create_payment.php" id="vnpay_form">
                                         <input type="hidden" name="final_total" value="<?php echo $final_total; ?>">
                                         <!--<input type="submit" class="btn btn-primary" value="Pay Now" name="form1"> -->
                                         <div class="col-md-12 form-group">
-                                            <input type="submit" class="btn btn-primary" value="<?php echo LANG_VALUE_46; ?>" name="form1">
+                                            <input type="submit" name="redirect" class="btn btn-primary" value="<?php echo LANG_VALUE_46; ?> <?php echo LANG_VALUE_165; ?>" >
                                         </div>
                                     </form>
 
@@ -378,7 +378,7 @@ if(!isset($_SESSION['cart_p_id'])) {
                                             <textarea name="transaction_info" class="form-control" cols="30" rows="10"></textarea>
                                         </div>
                                         <div class="col-md-12 form-group">
-                                            <input type="submit" class="btn btn-primary" value="<?php echo LANG_VALUE_46; ?>" name="form3">
+                                            <input type="submit" class="btn btn-primary" value="<?php echo LANG_VALUE_46; ?> <?php echo LANG_VALUE_38; ?>" name="form3">
                                         </div>
                                     </form>
 
@@ -397,7 +397,7 @@ if(!isset($_SESSION['cart_p_id'])) {
             </div>
         </div>
     </div>
-</div>
+</div> 
 
 
 <?php require_once('footer.php'); ?>

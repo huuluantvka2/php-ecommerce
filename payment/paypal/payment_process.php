@@ -2,6 +2,7 @@
 ob_start();
 session_start();
 require_once('../../admin/inc/config.php');
+require_once('currency_exchanger.php');
 
 $error_message = '';
 
@@ -26,11 +27,14 @@ $payment_date = date('Y-m-d H:i:s');
 if (!isset($_POST["txn_id"]) && !isset($_POST["txn_type"])){
 	$querystring = '';
 	
+	//chuyển đổi tiền VND sang usd
+	$item_amount = getCurrencyExchangeRate('VND', 'USD', $item_amount);
+
 	// Firstly Append paypal account to querystring
 	$querystring .= "?business=".urlencode($paypal_email)."&";
 	
 	// Append amount& currency (£) to quersytring so it cannot be edited in html
-	
+
 	//The item name and amount can be brought in dynamically by querying the $_POST['item_number'] variable.
 	$querystring .= "item_name=".urlencode($item_name)."&";
 	$querystring .= "amount=".urlencode($item_amount)."&";

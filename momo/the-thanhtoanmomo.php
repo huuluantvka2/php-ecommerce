@@ -22,30 +22,31 @@ function execPostRequest($url, $data)
 }
 
 
-$ENDPOINT_URL = "https://test-payment.momo.vn/v2/gateway/api/create";
+$endpoint = "https://test-payment.momo.vn/v2/gateway/api/create";
 
 
-$partnerCode = 'MOMOJJZK20211208';
-$accessKey = 'wh3WnjRgfHKLEn6d';
-$secretKey = '234XQPKV559z9T3tYlW58uuL5d022RgQ';
-$orderInfo = "Test thanh toan momo";
-$amount = strval($_POST["final_total"]??0);
+$partnerCode = 'MOMOBKUN20180529';
+$accessKey = 'klm05TvNBzhg7h7j';
+$secretKey = 'at67qH6mk8w5Y1nAyMoYKMWACiEi2bsa';
+$orderInfo = "Thanh toán qua MoMo";
+$amount = str_replace(',', '', $_POST["final_total"]) ;
 $orderId = time() ."";
-$redirectUrl = "https://quanlybanhang-nghi.herokuapp.com/payment_success.php";
-$ipnUrl = "https://quanlybanhang-nghi.herokuapp.com/payment_success.php";
+$redirectUrl = "http://localhost/eCommerceSite-PHP/momo/return_momo.php";
+$ipnUrl = "http://localhost/eCommerceSite-PHP/momo/ipn_momo.php";
 $extraData = "";
 
 
 
+
     $requestId = time() . "";
-    $requestType = "captureWallet";
-    //$extraData = ($_POST["extraData"] ? $_POST["extraData"] : "");
+    $requestType = "payWithATM";
+    $extraData = ($_POST["extraData"] ? $_POST["extraData"] : "");
     //before sign HMAC SHA256 signature
     $rawHash = "accessKey=" . $accessKey . "&amount=" . $amount . "&extraData=" . $extraData . "&ipnUrl=" . $ipnUrl . "&orderId=" . $orderId . "&orderInfo=" . $orderInfo . "&partnerCode=" . $partnerCode . "&redirectUrl=" . $redirectUrl . "&requestId=" . $requestId . "&requestType=" . $requestType;
     $signature = hash_hmac("sha256", $rawHash, $secretKey);
     $data = array('partnerCode' => $partnerCode,
         'partnerName' => "Test",
-        "storeId" => "Luantest",
+        "storeId" => "MomoTestStore",
         'requestId' => $requestId,
         'amount' => $amount,
         'orderId' => $orderId,
@@ -56,12 +57,11 @@ $extraData = "";
         'extraData' => $extraData,
         'requestType' => $requestType,
         'signature' => $signature);
-    $result = execPostRequest($ENDPOINT_URL, json_encode($data));
+    $result = execPostRequest($endpoint, json_encode($data));
     $jsonResult = json_decode($result, true);  // decode json
 
     //Just a example, please check more in there
-    #var_dump($result);
-    #die;
+
     header('Location: ' . $jsonResult['payUrl']);
 
 ?>

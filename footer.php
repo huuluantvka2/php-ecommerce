@@ -102,7 +102,7 @@ This link will be active only for 24 hours.
 			?>
 				<form action="" method="post">
 					<?php $csrf->echoInputField(); ?>
-					<h2><?php echo LANG_VALUE_93; ?></h2>
+					<h2>Nhận thông tin qua email</h2>
 					<div class="input-group">
 			        	<input type="email" class="form-control" placeholder="<?php echo LANG_VALUE_95; ?>" name="email_subscribe">
 			         	<span class="input-group-btn">
@@ -124,7 +124,7 @@ This link will be active only for 24 hours.
 	<div class="container">
 		<div class="row">
 			<div class="col-md-12 copyright">
-				<?php echo $footer_copyright; ?>
+			Copyright © 2022
 			</div>
 		</div>
 	</div>
@@ -167,49 +167,42 @@ foreach ($result as $row) {
 		advFieldsStatus = $('#advFieldsStatus').val();
 
 		$('#paypal_form').hide();
-		$('#stripe_form').hide();
 		$('#bank_form').hide();
-		$('#zp_form').hide();
 		$('#momo_form').hide();
+		$('#vnpay_form').hide();
 
         $('#advFieldsStatus').on('change',function() {
             advFieldsStatus = $('#advFieldsStatus').val();
             if ( advFieldsStatus == '' ) {
             	$('#paypal_form').hide();
-				$('#stripe_form').hide();
 				$('#bank_form').hide();
 				$('#momo_form').hide();
-				$('#zp_form').hide();
+				$('#vnpay_form').hide();
             } else if ( advFieldsStatus == 'PayPal' ) {
                	$('#paypal_form').show();
-				$('#stripe_form').hide();
 				$('#bank_form').hide();
 				$('#momo_form').hide();
-				$('#zp_form').hide();
+				$('#vnpay_form').hide();
             } else if ( advFieldsStatus == 'Stripe' ) {
                	$('#paypal_form').hide();
-				$('#stripe_form').show();
 				$('#bank_form').hide();
 				$('#momo_form').hide();
-				$('#zp_form').hide();
+				$('#vnpay_form').hide();
             } else if ( advFieldsStatus == 'Bank Deposit' ) {
             	$('#paypal_form').hide();
-				$('#stripe_form').hide();
 				$('#bank_form').show();
 				$('#momo_form').hide();
-				$('#zp_form').hide();
+				$('#vnpay_form').hide();
             } else if ( advFieldsStatus == 'momo' ) {
             	$('#paypal_form').hide();
-				$('#stripe_form').hide();
 				$('#bank_form').hide();
 				$('#momo_form').show();
-				$('#zp_form').hide();
-            } else if ( advFieldsStatus == 'Zalopay' ) {
+				$('#vnpay_form').hide();
+            } else if ( advFieldsStatus == 'vnpay' ) {
             	$('#paypal_form').hide();
-				$('#stripe_form').hide();
 				$('#bank_form').hide();
 				$('#momo_form').hide();
-				$('#zp_form').show();
+				$('#vnpay_form').show();
             }
         });
 	});

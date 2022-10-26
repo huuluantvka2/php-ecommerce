@@ -29,7 +29,7 @@ SET time_zone = "+00:00";
 CREATE TABLE `tbl_color` (
   `color_id` int(11) NOT NULL,
   `color_name` text(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4_unicode_ci;
 
 --
 -- Dumping data for table `tbl_color`
@@ -366,7 +366,7 @@ CREATE TABLE `tbl_customer` (
   `cust_datetime` text(100) NOT NULL,
   `cust_timestamp` text(100) NOT NULL,
   `cust_status` int(1) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4_unicode_ci;
 
 --
 -- Dumping data for table `tbl_customer`
@@ -396,7 +396,7 @@ CREATE TABLE `tbl_customer_message` (
   `message` text NOT NULL,
   `order_detail` text NOT NULL,
   `cust_id` int(11) NOT NULL
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
 
@@ -408,7 +408,7 @@ CREATE TABLE `tbl_end_category` (
   `ecat_id` int(11) NOT NULL,
   `ecat_name` text(255) NOT NULL,
   `mcat_id` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4_unicode_ci;
 
 --
 -- Dumping data for table `tbl_end_category`
@@ -504,7 +504,7 @@ CREATE TABLE `tbl_faq` (
   `faq_id` int(11) NOT NULL,
   `faq_title` text(255) NOT NULL,
   `faq_content` text NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4_unicode_ci;
 
 --
 -- Dumping data for table `tbl_faq`
@@ -527,15 +527,14 @@ CREATE TABLE `tbl_language` (
   `lang_id` int(11) NOT NULL,
   `lang_name` text(255) NOT NULL,
   `lang_value` text NOT NULL
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `tbl_language`
 --
 
 INSERT INTO `tbl_language` (`lang_id`, `lang_name`, `lang_value`) VALUES
--- (1, 'Currency', '$'),
-(1, 'Currency', 'VND'),
+(1, 'Currency', '$'),
 (2, 'Search Product', 'Search Product'),
 (3, 'Search', 'Search'),
 (4, 'Submit', 'Submit'),
@@ -709,7 +708,7 @@ CREATE TABLE `tbl_mid_category` (
   `mcat_id` int(11) NOT NULL,
   `mcat_name` text(255) NOT NULL,
   `tcat_id` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4_unicode_ci;
 
 --
 -- Dumping data for table `tbl_mid_category`
@@ -747,7 +746,7 @@ CREATE TABLE `tbl_order` (
   `quantity` text(50) NOT NULL,
   `unit_price` text(50) NOT NULL,
   `payment_id` text(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4_unicode_ci;
 
 --
 -- Dumping data for table `tbl_order`
@@ -799,7 +798,7 @@ CREATE TABLE `tbl_page` (
   `vgallery_meta_title` text(255) NOT NULL,
   `vgallery_meta_keyword` text NOT NULL,
   `vgallery_meta_description` text NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4_unicode_ci;
 
 --
 -- Dumping data for table `tbl_page`
@@ -831,7 +830,7 @@ CREATE TABLE `tbl_payment` (
   `payment_status` text(25) NOT NULL,
   `shipping_status` text(20) NOT NULL,
   `payment_id` text(255) NOT NULL
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4_unicode_ci;
 
 --
 -- Dumping data for table `tbl_payment`
@@ -854,7 +853,7 @@ CREATE TABLE `tbl_photo` (
   `id` int(11) NOT NULL,
   `caption` text(255) NOT NULL,
   `photo` text(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4_unicode_ci;
 
 --
 -- Dumping data for table `tbl_photo`
@@ -886,7 +885,7 @@ CREATE TABLE `tbl_post` (
   `meta_title` text(255) NOT NULL,
   `meta_keyword` text NOT NULL,
   `meta_description` text NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4_unicode_ci;
 
 --
 -- Dumping data for table `tbl_post`
@@ -927,7 +926,7 @@ CREATE TABLE `tbl_product` (
   `p_is_featured` int(1) NOT NULL,
   `p_is_active` int(1) NOT NULL,
   `ecat_id` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4_unicode_ci;
 
 --
 -- Dumping data for table `tbl_product`
@@ -966,7 +965,7 @@ CREATE TABLE `tbl_product_color` (
   `id` int(11) NOT NULL,
   `color_id` int(11) NOT NULL,
   `p_id` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4_unicode_ci;
 
 --
 -- Dumping data for table `tbl_product_color`
@@ -1070,7 +1069,7 @@ CREATE TABLE `tbl_product_photo` (
   `pp_id` int(11) NOT NULL,
   `photo` text(255) NOT NULL,
   `p_id` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4_unicode_ci;
 
 --
 -- Dumping data for table `tbl_product_photo`
@@ -1115,7 +1114,7 @@ CREATE TABLE `tbl_product_size` (
   `id` int(11) NOT NULL,
   `size_id` int(11) NOT NULL,
   `p_id` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4_unicode_ci;
 
 --
 -- Dumping data for table `tbl_product_size`
@@ -1324,7 +1323,7 @@ CREATE TABLE `tbl_rating` (
   `cust_id` int(11) NOT NULL,
   `comment` text NOT NULL,
   `rating` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
 
@@ -1337,7 +1336,7 @@ CREATE TABLE `tbl_service` (
   `title` text(255) NOT NULL,
   `content` text NOT NULL,
   `photo` text(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4_unicode_ci;
 
 --
 -- Dumping data for table `tbl_service`
@@ -1429,7 +1428,7 @@ CREATE TABLE `tbl_settings` (
   `ads_above_popular_product_on_off` int(1) NOT NULL,
   `ads_above_testimonial_on_off` int(1) NOT NULL,
   `ads_category_sidebar_on_off` int(1) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4_unicode_ci;
 
 --
 -- Dumping data for table `tbl_settings`
@@ -1448,7 +1447,7 @@ CREATE TABLE `tbl_shipping_cost` (
   `shipping_cost_id` int(11) NOT NULL,
   `country_id` int(11) NOT NULL,
   `amount` text(20) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4_unicode_ci;
 
 --
 -- Dumping data for table `tbl_shipping_cost`
@@ -1469,7 +1468,7 @@ INSERT INTO `tbl_shipping_cost` (`shipping_cost_id`, `country_id`, `amount`) VAL
 CREATE TABLE `tbl_shipping_cost_all` (
   `sca_id` int(11) NOT NULL,
   `amount` text(20) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4_unicode_ci;
 
 --
 -- Dumping data for table `tbl_shipping_cost_all`
@@ -1487,7 +1486,7 @@ INSERT INTO `tbl_shipping_cost_all` (`sca_id`, `amount`) VALUES
 CREATE TABLE `tbl_size` (
   `size_id` int(11) NOT NULL,
   `size_name` text(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4_unicode_ci;
 
 --
 -- Dumping data for table `tbl_size`
@@ -1556,7 +1555,7 @@ CREATE TABLE `tbl_slider` (
   `button_text` text(255) NOT NULL,
   `button_url` text(255) NOT NULL,
   `position` text(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4_unicode_ci;
 
 --
 -- Dumping data for table `tbl_slider`
@@ -1578,7 +1577,7 @@ CREATE TABLE `tbl_social` (
   `social_name` text(30) NOT NULL,
   `social_url` text(255) NOT NULL,
   `social_icon` text(30) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4_unicode_ci;
 
 --
 -- Dumping data for table `tbl_social`
@@ -1615,7 +1614,7 @@ CREATE TABLE `tbl_subscriber` (
   `subs_date_time` text(100) NOT NULL,
   `subs_hash` text(255) NOT NULL,
   `subs_active` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4_unicode_ci;
 
 --
 -- Dumping data for table `tbl_subscriber`
@@ -1639,7 +1638,7 @@ CREATE TABLE `tbl_top_category` (
   `tcat_id` int(11) NOT NULL,
   `tcat_name` text(255) NOT NULL,
   `show_on_menu` int(1) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4_unicode_ci;
 
 --
 -- Dumping data for table `tbl_top_category`
@@ -1667,7 +1666,7 @@ CREATE TABLE `tbl_user` (
   `photo` text(255) NOT NULL,
   `role` text(30) NOT NULL,
   `status` text(10) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4_unicode_ci;
 
 --
 -- Dumping data for table `tbl_user`
@@ -1687,7 +1686,7 @@ CREATE TABLE `tbl_video` (
   `id` int(11) NOT NULL,
   `title` text(255) NOT NULL,
   `iframe_code` text NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4_unicode_ci;
 
 --
 -- Dumping data for table `tbl_video`

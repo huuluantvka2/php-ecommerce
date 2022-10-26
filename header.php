@@ -84,7 +84,7 @@ foreach ($result as $row) {
 	<meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
 
 	<!-- Favicon -->
-	<link rel="icon" type="image/png" href="assets/uploads/<?php echo $favicon; ?>">
+	<link rel="icon" type="image/png" href="assets/uploads/favicon.ico">
 
 	<!-- Stylesheets -->
 	<link rel="stylesheet" href="assets/css/bootstrap.min.css">
@@ -132,7 +132,7 @@ foreach ($result as $row) {
 	
 	if($cur_page == 'index.php' || $cur_page == 'login.php' || $cur_page == 'registration.php' || $cur_page == 'cart.php' || $cur_page == 'checkout.php' || $cur_page == 'forget-password.php' || $cur_page == 'reset-password.php' || $cur_page == 'product-category.php' || $cur_page == 'product.php') {
 		?>
-		<title><?php echo $meta_title_home; ?></title>
+		<title>Quan ly ban hang</title>
 		<meta name="keywords" content="<?php echo $meta_keyword_home; ?>">
 		<meta name="description" content="<?php echo $meta_description_home; ?>">
 		<?php
@@ -280,7 +280,7 @@ foreach ($result as $row) {
 	<div class="container">
 		<div class="row inner">
 			<div class="col-md-4 logo">
-				<a href="index.php"><img src="assets/uploads/<?php echo $logo; ?>" alt="logo image"></a>
+				<a href="index.php"><img src="assets/uploads/logo.png" alt="logo image"></a>
 			</div>
 			
 			<div class="col-md-5 right">
@@ -322,7 +322,7 @@ foreach ($result as $row) {
 					} else {
 						echo '0.00';
 					}
-					?> <?php echo LANG_VALUE_1; ?>)</a></li>
+					?><?php echo LANG_VALUE_1; ?>)</a></li>
 				</ul>
 			</div>
 			<div class="col-md-3 search-area">

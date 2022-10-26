@@ -131,6 +131,7 @@ if (isset($_POST['form1'])) {
                                         '',
                                         '',
                                         '',
+                                        237,
                                         '',
                                         '',
                                         '',
@@ -138,8 +139,7 @@ if (isset($_POST['form1'])) {
                                         '',
                                         '',
                                         '',
-                                        '',
-                                        '',
+                                        237,
                                         '',
                                         '',
                                         '',
@@ -148,7 +148,7 @@ if (isset($_POST['form1'])) {
                                         $token,
                                         $cust_datetime,
                                         $cust_timestamp,
-                                        0
+                                        1
                                     ));
 
         // Send email for confirmation of the account
